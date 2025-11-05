@@ -10,7 +10,7 @@ export default function Products() {
 
   const getProducts = async () => {
    try {
-      const response = await fetch("https://dummyjson.com/producs?limit=194");  
+      const response = await fetch("https://dummyjson.com/products?limit=194");  
       const result = await response.json();
       setProducts(result.products);      
     } catch (err) {
@@ -31,7 +31,7 @@ export default function Products() {
     );
   }
 
-  if (products.length === 0) {
+  if (products.length == 0) {
     return (
       <div className="loading text-center py-5 my-5">
         <div className="spinner-border text-success mb-3" role="status"></div>
