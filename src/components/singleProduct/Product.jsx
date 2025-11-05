@@ -9,7 +9,7 @@ export default function Product() {
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://dummyjson.com/products/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_BURL}/products/${id}`);
       const result = await response.json();
       setProduct(result);
       setError('');

@@ -10,7 +10,7 @@ export default function Products() {
 
   const getProducts = async () => {
    try {
-      const response = await fetch("https://dummyjson.com/products?limit=194");  
+      const response = await fetch(`${import.meta.env.VITE_BURL}/products?limit=194`);  
       const result = await response.json();
       setProducts(result.products);      
     } catch (err) {
@@ -90,7 +90,7 @@ export default function Products() {
         <div className="row g-4">
           {currentProducts.map((product) => (
             <div className="col-sm-6 col-md-4 col-lg-3" key={product.id}>
-              <div className="product-card h-100 text-center shadow-sm">
+              <div className="product-card h-100 text-center shadow-sm bg-white">
                 <div className="img-container">
                   <img
                     src={product.thumbnail}
